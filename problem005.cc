@@ -2,31 +2,33 @@
 
 using namespace std;
 
-int sum(int);
+int val(int);
+
+int m = 1;
 
 int main() {
     
-    int x = 999;
-    
-    cout << sum(x) << endl;
+    cout << val(1) << endl;
     
     return 0;
     
 }
 
-int sum(int n) {
+int val(int n) {
     
-    if (n > 0) {
+    if (n <= 20) {
         
-        if (n % 3 == 0 || n % 5 == 0) {
+        if (m % n == 0) {
             
-            return (sum(n - 1) + n);
+            return val(n + 1);
             
         }
         
         else {
             
-            return sum(n - 1);
+            m = m + 1;
+            
+            return val(1);
             
         }
         
@@ -34,7 +36,8 @@ int sum(int n) {
     
     else {
         
-        return 0;
+        return m;
         
     }
+    
 }
